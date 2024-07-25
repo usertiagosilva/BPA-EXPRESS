@@ -1,0 +1,85 @@
+// Configuração geral
+header {
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// Icons
+i {
+    color: $white-normal;
+}
+
+.header-icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 14px;
+}
+
+.header-icons a:hover {
+    i {
+        animation: translateY 0.8s infinite alternate;
+        color: $red-light;
+    }
+}
+// animação dos icons
+@keyframes translateY {
+   from {
+        transform: translateY(0) scale(1);
+   }
+   to {
+        transform: translateY(-8px) scale(1.1);
+   } 
+}
+
+// Button
+.header-button {
+    border: 1px solid $white-normal;
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: $white-normal;
+    background-color: transparent;
+    transition: background-color 0.8s;
+}
+
+.header-button:hover {
+    border: 1px solid $red-light;
+    background-color: $red-light;
+    
+}
+
+// // Logo
+// .header-logo {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 400px;
+// }
+
+@media screen and (max-width: 768px) {
+    .header-content {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            margin-top: 16px;
+            font-size: 35px;
+        }
+    
+    }
+
+    // .header-logo img {
+    //     width: 250px;
+    //     margin-top: 45px;
+    // }
+
+    .header-button {
+        display: none;
+    }
+}
