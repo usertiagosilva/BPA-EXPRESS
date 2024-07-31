@@ -52,6 +52,13 @@ i {
   background-color: #d34040;
 }
 
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+}
+
 @media screen and (max-width: 768px) {
   .header-content {
     width: 100%;
@@ -62,6 +69,10 @@ i {
   .header-content i {
     margin-top: 16px;
     font-size: 35px;
+  }
+  .header-logo img {
+    width: 400px;
+    margin-top: 45px;
   }
   .header-button {
     display: none;
@@ -81,7 +92,7 @@ i {
   content: "";
   display: block;
   position: absolute;
-  background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("../assets/bg1.jfif");
+  background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("../assets/bg2.jfif");
   left: 0;
   top: 0;
   width: 100%;
@@ -90,7 +101,7 @@ i {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 0;
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 .hero {
@@ -238,8 +249,20 @@ i {
   display: flex;
   justify-content: space-between;
   padding: 14px;
-  background-color: #fff;
+  background-color: #161617;
   z-index: 99;
+}
+
+.service-info button {
+  color: #fff;
+  background-color: #d94140;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 0;
+}
+
+.service-info strong {
+  color: #fff;
 }
 
 body {

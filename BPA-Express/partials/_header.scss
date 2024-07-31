@@ -26,7 +26,7 @@ i {
         color: $red-light;
     }
 }
-// animação dos icons
+// animação icons
 @keyframes translateY {
    from {
         transform: translateY(0) scale(1);
@@ -52,13 +52,13 @@ i {
     
 }
 
-// // Logo
-// .header-logo {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     width: 400px;
-// }
+// Logo
+ .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+}
 
 @media screen and (max-width: 768px) {
     .header-content {
@@ -74,10 +74,10 @@ i {
     
     }
 
-    // .header-logo img {
-    //     width: 250px;
-    //     margin-top: 45px;
-    // }
+.header-logo img {
+    width: 400px;
+    margin-top: 45px;
+}
 
     .header-button {
         display: none;

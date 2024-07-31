@@ -13,7 +13,7 @@
     content: '';
     display: block;
     position: absolute;
-    background-image: linear-gradient(to bottom, rgba(6,18,30,0.1), #06121e), url("../assets/bg1.jfif");
+    background-image: linear-gradient(to bottom, rgba(6,18,30,0.1), #06121e), url("../assets/bg2.jfif");
     left: 0;
     top: 0;
     width: 100%;
@@ -22,7 +22,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
-    opacity: 0.9;
+    opacity: 0.5;
 }
 
 // Hero
@@ -185,10 +185,19 @@
     display: flex;
     justify-content: space-between;
     padding: 14px;
-    background-color: $white-normal;
+    background-color: $black-dark;
     z-index: 99;
 }
 
 .service-info button {
-    
+    color: $white-normal;
+    background-color: $red-normal;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 0;
 }
+
+.service-info strong {
+    color: $white-normal;
+}
+
