@@ -143,9 +143,6 @@ i {
   }
 }
 @media screen and (max-width: 768px) {
-  .hero {
-    min-height: 60vh;
-  }
   .hero h1 {
     font-size: 30px;
     padding: 0 14px;
@@ -317,7 +314,7 @@ footer p {
   position: absolute;
   width: 120px;
   top: 8px;
-  left: -140px;
+  left: -100px;
   padding: 4px;
   border-radius: 8px;
   text-align: center;
@@ -335,6 +332,11 @@ footer p {
 @media screen and (max-width: 768px) {
   .btn-whatsapp img {
     max-width: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    min-height: 60vh;
   }
 }
 body {

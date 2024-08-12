@@ -2,6 +2,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 8px;
+    
 }
 
 // Bg home
@@ -69,7 +70,7 @@
 
 @media screen and (max-width: 768px) {
     .hero {
-        min-height: 60vh;
+        
 
         h1 {
             font-size: 30px;
@@ -259,7 +260,7 @@ footer p {
     position: absolute;
     width: 120px;
     top: 8px;
-    left: -140px;
+    left: -100px;
     padding: 4px;
     border-radius: 8px;
     text-align: center;
@@ -279,5 +280,11 @@ footer p {
         img{
             max-width: 50px;
         }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        min-height: 60vh;
     }
 }
