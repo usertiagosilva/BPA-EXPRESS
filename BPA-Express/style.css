@@ -5,6 +5,7 @@
   outline: 0;
 }
 
+/* Header */
 header {
   width: 100%;
 }
@@ -101,12 +102,13 @@ i {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 0;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
+/* Hero */
 .hero {
   color: #fff;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,11 +119,11 @@ i {
   text-align: center;
   line-height: 150%;
   max-width: 940px;
-  font-size: 40px;
+  font-size: 45px;
 }
 
 .button-contact {
-  padding: 14px 28px;
+  padding: 14px 25px;
   color: #fff;
   background-color: #d94140;
   border-radius: 4px;
@@ -143,6 +145,9 @@ i {
   }
 }
 @media screen and (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+  }
   .hero h1 {
     font-size: 30px;
     padding: 0 14px;
@@ -154,6 +159,8 @@ i {
     font-size: 24px;
   }
 }
+
+/* About  */
 .about {
   background-color: #06121e;
   overflow: hidden;
@@ -165,7 +172,7 @@ i {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  padding: 80px 15px 60px 15px;
+  padding: 35px 15px 60px 15px;
 }
 .about-content img {
   max-width: 570px;
@@ -189,6 +196,8 @@ i {
     flex-direction: column;
   }
 }
+
+/* Services */
 .services {
   background-color: #fff;
   color: #232224;
@@ -210,7 +219,7 @@ i {
   line-height: 150%;
   margin-bottom: 15px;
   text-align: center;
-  max-width: 780px;
+  max-width: 800px;
 }
 
 .our-services {
@@ -262,7 +271,7 @@ i {
   color: #fff;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 468px) {
   .our-services {
     flex-direction: column;
   }
@@ -270,6 +279,62 @@ i {
     max-width: 740px;
   }
 }
+
+/* Calculadora de Frete */
+
+.freight-calculator {
+    background-color: #fff;
+    color: #232224;
+    padding: 50px 15px;
+    text-align: center;
+}
+
+.freight-calculator h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 75%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #0e0d0d;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #d94140;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #a12e2e;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Footer */
 .footer {
   background-color: #040f1a;
   display: flex;
@@ -295,6 +360,7 @@ footer p {
   font-size: 15px;
 }
 
+/* Button whatsapp */
 .btn-whatsapp {
   position: fixed;
   bottom: 15px;
@@ -329,22 +395,19 @@ footer p {
   opacity: 1;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 468px) {
   .btn-whatsapp img {
     max-width: 50px;
   }
 }
-@media screen and (max-width: 768px) {
-  body {
-    min-height: 60vh;
-  }
-}
+
+/* Configuração geral */
 body {
   font-family: "Sora", sans-serif;
   width: 100%;
   height: 100vh;
   position: relative;
-  background-color: black;
+  background-color: #06121e;
 }
 
 button {
@@ -352,11 +415,16 @@ button {
   cursor: pointer;
 }
 
+svg {
+  width: 100%;
+}
+
 img {
   width: 100%;
 }
 
+
 a {
   cursor: pointer;
   text-decoration: none;
-}/*# sourceMappingURL=style.css.map */
+}

@@ -1,7 +1,7 @@
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 8px;
+    padding: 0 8px; 
     
 }
 
@@ -23,13 +23,13 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 // Hero
 .hero {
     color: $white-normal;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,12 +40,12 @@
         text-align: center;
         line-height: 150%;
         max-width: 940px;
-        font-size: 40px;
+        font-size: 45px;
     }
 }
 
 .button-contact {
-    padding: 14px 28px;
+    padding: 14px 25px;
     color: $white-normal;
     background-color: $red-normal;
     border-radius: 4px;
@@ -69,8 +69,9 @@
 }
 
 @media screen and (max-width: 768px) {
+
     .hero {
-        
+            min-height: 60vh;        
 
         h1 {
             font-size: 30px;
@@ -98,7 +99,7 @@
     align-items: center;
     justify-content: center;
     gap: 14px;
-    padding: 80px 15px 60px 15px;
+    padding: 35px 15px 60px 15px;
 
     img {
         max-width: 570px;
@@ -149,7 +150,7 @@
     line-height: 150%;
     margin-bottom: 15px;
     text-align: center;
-    max-width: 780px;
+    max-width: 800px;
 }
 
 .our-services {
@@ -202,7 +203,7 @@
     color: $white-normal;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 468px){
     .our-services{
         flex-direction: column;
     }
@@ -211,6 +212,7 @@
         max-width: 740px;
     }
 }
+
 
 // Footer
 .footer {
@@ -275,7 +277,7 @@ footer p {
     opacity: 1;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 468px){
     .btn-whatsapp{
         img{
             max-width: 50px;
@@ -283,8 +285,3 @@ footer p {
     }
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        min-height: 60vh;
-    }
-}
