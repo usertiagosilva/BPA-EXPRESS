@@ -5,6 +5,36 @@
   outline: 0;
 }
 
+
+/* Configuração geral */
+body {
+  font-family: "Sora", sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #06121e;
+}
+
+button {
+  font-family: "Sora", sans-serif;
+  cursor: pointer;
+}
+
+svg {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+    height: auto;
+}
+
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 /* Header */
 header {
   width: 100%;
@@ -57,7 +87,7 @@ i {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 600px;
+  width: 400px;
 }
 
 @media screen and (max-width: 768px) {
@@ -242,7 +272,7 @@ i {
 .service img {
   width: 100%;
   max-width: 354px;
-  transition: transform 0.3s;
+  transition: transform 0.7s;
 }
 
 .service img:hover {
@@ -259,13 +289,6 @@ i {
   z-index: 99;
 }
 
-.service-info button {
-  color: #fff;
-  background-color: #d94140;
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 0;
-}
 
 .service-info strong {
   color: #fff;
@@ -281,7 +304,6 @@ i {
 }
 
 /* Calculadora de Frete */
-
 .freight-calculator {
     background-color: #fff;
     color: #232224;
@@ -317,7 +339,7 @@ button[type="submit"] {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s;
@@ -333,6 +355,39 @@ button[type="submit"]:hover {
     font-weight: 600;
     color: #333;
 }
+
+/* Orçamento do frete */
+.result-freight {
+    margin-top: 80px;
+    background-color: #fff;
+    color: #232224;
+    padding: 50px 15px;
+    text-align: left;
+    line-height: 150%;
+}
+
+.result-freight h3 {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.button-result-freight[type="submit"] {
+    background-color: #d94140;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.button-result-freight[type="submit"]:hover {
+  background-color: #a12e2e;
+}
+
+
 
 /* Footer */
 .footer {
@@ -357,7 +412,7 @@ button[type="submit"]:hover {
 }
 
 footer p {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 /* Button whatsapp */
@@ -365,7 +420,7 @@ footer p {
   position: fixed;
   bottom: 15px;
   right: 25px;
-  z-index: 99;
+  z-index: 1000;
 }
 .btn-whatsapp img {
   max-width: 65px;
@@ -380,7 +435,7 @@ footer p {
   position: absolute;
   width: 120px;
   top: 8px;
-  left: -100px;
+  left: -130px;
   padding: 4px;
   border-radius: 8px;
   text-align: center;
@@ -401,30 +456,3 @@ footer p {
   }
 }
 
-/* Configuração geral */
-body {
-  font-family: "Sora", sans-serif;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background-color: #06121e;
-}
-
-button {
-  font-family: "Sora", sans-serif;
-  cursor: pointer;
-}
-
-svg {
-  width: 100%;
-}
-
-img {
-  width: 100%;
-}
-
-
-a {
-  cursor: pointer;
-  text-decoration: none;
-}

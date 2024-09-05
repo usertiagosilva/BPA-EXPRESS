@@ -36,12 +36,39 @@ document.getElementById('freightForm').addEventListener('submit', function (e) {
                     cost *= 1.5; // 50% a mais para transporte expresso
                 }
 
-                // Exibindo o resultado
+                // Exibindo o resultado na seção de Detalhes do Frete
+                exibirResultadoFrete(pickup, delivery, distance, weight, cost);
+
+                // Exibindo o resultado também na seção original (se desejar)
                 document.getElementById('result').innerHTML = `Distância: ${distance.toFixed(2)} km<br>O valor estimado do frete é R$ ${cost.toFixed(2)}`;
             }
         });
-
-        
 });
+
+// Relatorio do orçamento detalhado
+function exibirResultadoFrete(enderecoColeta, enderecoEntrega, distancia, peso, valorFrete) {
+    document.getElementById("enderecoColeta").textContent = enderecoColeta;
+    document.getElementById("enderecoEntrega").textContent = enderecoEntrega;
+    document.getElementById("distancia").textContent = distancia.toFixed(2);
+    document.getElementById("pesoCarga").textContent = peso;
+    document.getElementById("valorFrete").textContent = valorFrete.toFixed(2);
+    
+    document.getElementById("resultadoFrete").style.display = "block";
+
+    // Enviar orçamento
+    document.getElementById("enviarOrcamento").addEventListener("click", function() {
+        const mensagem = `Orçamento de Frete:
+        Endereço de Coleta: ${enderecoColeta}
+        Endereço de Entrega: ${enderecoEntrega}
+        Distância: ${distancia.toFixed(2)} km
+        Peso da Carga: ${peso} kg
+        Valor do Frete: R$ ${valorFrete.toFixed(2)}`;
+        
+        const numeroWhatsApp = "041999905296"; // número desejado
+        const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
+        
+        window.open(urlWhatsApp, "_blank");
+    });
+}
 
 

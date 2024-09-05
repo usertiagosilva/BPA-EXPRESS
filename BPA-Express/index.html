@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,11 +112,11 @@
                 <input type="number" id="weight" name="weight" required>
             </div>
             <div class="form-group">
-                <label for="pickup">Coleta:</label>
+                <label for="pickup">Endereço de coleta:</label>
                 <input type="text" id="pickup" name="pickup" required>
             </div>
             <div class="form-group">
-                <label for="delivery">Entrega:</label>
+                <label for="delivery">Endereço de entrega:</label>
                 <input type="text" id="delivery" name="delivery" required>
             </div>
             <div class="form-group">
@@ -129,8 +129,20 @@
             <button type="submit">Calcular Frete</button>
         </form>
         <div id="result" class="result"></div>
+
+        <!-- Orçamento do frete -->
+    <div class="result-freight" id="resultadoFrete" style="display:none;">
+        <h3>Detalhes do Seu Frete</h3>
+        <p><strong>Endereço de Coleta:</strong> <span id="enderecoColeta"></span></p>
+        <p><strong>Endereço de Entrega:</strong> <span id="enderecoEntrega"></span></p>
+        <p><strong>Distância:</strong> <span id="distancia"></span> km</p>
+        <p><strong>Peso da Carga:</strong> <span id="pesoCarga"></span> kg</p>
+        <p><strong>Valor do Frete:</strong> R$ <span id="valorFrete"></span></p>
+        <button class="button-result-freight" id="enviarOrcamento" type="submit">Enviar Orçamento</button>
+    </div>
     </div>
 
+    
     
 </section>
 
