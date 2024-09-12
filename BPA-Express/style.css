@@ -135,6 +135,53 @@ i {
   opacity: 0.4;
 }
 
+/* Cadastro */
+.registration {
+  background-color: #f4f4f4;
+  color: #232224;
+  padding: 50px 15px;
+  text-align: center;
+}
+
+.registration h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input {
+  width: 75%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #0e0d0d;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #d94140;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #a12e2e;
+}
+
+
 /* Hero */
 .hero {
   color: #fff;
@@ -305,65 +352,65 @@ i {
 
 /* Calculadora de Frete */
 .freight-calculator {
-    background-color: #fff;
-    color: #232224;
-    padding: 50px 15px;
-    text-align: center;
+  background-color: #fff;
+  color: #232224;
+  padding: 50px 15px;
+  text-align: center;
 }
 
 .freight-calculator h2 {
-    font-size: 30px;
-    margin-bottom: 40px;
+  font-size: 30px;
+  margin-bottom: 40px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 input, select {
-    width: 75%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #0e0d0d;
-    font-size: 16px;
+  width: 75%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #0e0d0d;
+  font-size: 16px;
 }
 
-button[type="submit"] {
-    background-color: #d94140;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+button[type="submit"], .button-result-freight {
+  background-color: #d94140;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
-    background-color: #a12e2e;
+button[type="submit"]:hover, .button-result-freight:hover {
+  background-color: #a12e2e;
 }
 
 .result {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
 }
 
 /* Orçamento do frete */
 .result-freight {
-    margin-top: 80px;
-    background-color: #fff;
-    color: #232224;
-    padding: 50px 15px;
-    text-align: left;
-    line-height: 150%;
+  margin-top: 80px;
+  background-color: #fff;
+  color: #232224;
+  padding: 50px 15px;
+  text-align: left;
+  line-height: 150%;
 }
 
 .result-freight h3 {
@@ -371,20 +418,12 @@ button[type="submit"]:hover {
   margin-bottom: 30px;
 }
 
-.button-result-freight[type="submit"] {
-    background-color: #d94140;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 14px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
 
-.button-result-freight[type="submit"]:hover {
-  background-color: #a12e2e;
+
+@media (max-width: 768px) {
+  input, select {
+      width: 100%;
+  }
 }
 
 

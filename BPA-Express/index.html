@@ -102,8 +102,8 @@
             </section>
         </section>
 
-    <!-- Calculadora de Frete -->
-<section class="freight-calculator">
+ <!-- Calculadora de Frete -->
+ <section class="freight-calculator">
     <div class="container">
         <h2>Calcule o seu Frete</h2>
         <form id="freightForm">
@@ -131,20 +131,22 @@
         <div id="result" class="result"></div>
 
         <!-- Orçamento do frete -->
-    <div class="result-freight" id="resultadoFrete" style="display:none;">
-        <h3>Detalhes do Seu Frete</h3>
-        <p><strong>Endereço de Coleta:</strong> <span id="enderecoColeta"></span></p>
-        <p><strong>Endereço de Entrega:</strong> <span id="enderecoEntrega"></span></p>
-        <p><strong>Distância:</strong> <span id="distancia"></span> km</p>
-        <p><strong>Peso da Carga:</strong> <span id="pesoCarga"></span> kg</p>
-        <p><strong>Valor do Frete:</strong> R$ <span id="valorFrete"></span></p>
-        <button class="button-result-freight" id="enviarOrcamento" type="submit">Enviar Orçamento</button>
+        <div class="result-freight" id="resultadoFrete" style="display:none;">
+            <h3>Detalhes do Seu Frete</h3>
+            <p><strong>Endereço de Coleta:</strong> <span id="enderecoColeta"></span></p>
+            <p><strong>Endereço de Entrega:</strong> <span id="enderecoEntrega"></span></p>
+            <p><strong>Distância:</strong> <span id="distancia"></span> km</p>
+            <p><strong>Peso da Carga:</strong> <span id="pesoCarga"></span> kg</p>
+            <p><strong>Valor do Frete:</strong> R$ <span id="valorFrete"></span></p>
+            <button class="button-result-freight" id="enviarOrcamento" type="submit">Enviar orçamento</button>
+            <button class="button-result-freight" id="salvarPdf" type="button">Salvar como PDF</button>
+        </div>
     </div>
-    </div>
-
-    
-    
 </section>
+
+<!-- Incluir jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="scripts.js"></script>
 
     <!-- Footer -->
     <footer class="footer">
