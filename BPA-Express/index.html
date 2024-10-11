@@ -43,10 +43,10 @@
                         <img src="assets/default_transparent_765x625.png" alt="Logo BPA EXPRESS" data-aos="flip-up" data-aos-duration="1500" data-aos-delay="400">
                     </div> 
                     <div class="header-buttons"  data-aos="fade-down">
-                        <a class="header-button" href="#" target="_blank">
+                        <a class="header-button" href="login.html" target="_blank">
                             Entrar
                         </a>
-                        <a class="header-button" href="#" target="_blank">
+                        <a class="header-button" href="register.html" target="_blank">
                             Cadastrar
                         </a>
                     </div> 
@@ -58,6 +58,10 @@
                         Entrar em contato
                     </a>
                 </main>
+                <!-- Menu toggle -->
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </header>
         </div>
     <!-- About -->
@@ -111,24 +115,22 @@
         <h2>Descubra o valor do seu Frete</h2>
         <form id="freightForm">
             <div class="form-group">
-                <label for="weight">Peso da Carga (kg):</label>
-                <input type="number" id="weight" name="weight" required>
+                <input type="number" id="weight" name="weight" placeholder="Peso da Carga (kg)" required>
             </div>
             <div class="form-group">
-                <label for="pickup">Endereço de coleta:</label>
-                <input type="text" id="pickup" name="pickup" required>
+                <input type="text" id="pickup" name="pickup" placeholder="Endereço de coleta" required>
             </div>
             <div class="form-group">
-                <label for="delivery">Endereço de entrega:</label>
-                <input type="text" id="delivery" name="delivery" required>
+                <input type="text" id="delivery" name="delivery" placeholder="Endereço de entrega" required>
             </div>
             <div class="form-group">
-                <label for="transportType">Tipo de Transporte:</label>
                 <select id="transportType" name="transportType" required>
+                    <option value="" disabled selected hidden>Tipo de transporte</option>
                     <option value="normal">Normal</option>
                     <option value="express">Express</option>
                 </select>
             </div>
+            
             <button type="submit">Calcular Frete</button>
         </form>
         <div id="result" class="result"></div>
