@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Usuário</title>
+     <!-- API google -->
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARLiv-4fC4XefW7g533SI5Mbwr2hQZYaU&callback=initApp"  async defer></script> 
+
+     <!-- JS -->
+     <script src="script.js" defer></script>
+ 
+     <!-- Biblioteca animação -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ 
+     <!-- Google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
+ 
+     <!-- Icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style_dashboard.css">
+</head>
+<body>
+    <div class="container">
+         <!-- Menu Lateral -->
+         <nav class="sidebar">
+            <div class="logo">
+                <img src="assets/logo-dashboard.PNG" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#meus-envios" onclick="showSection('meus-envios')"><i class="fas fa-box"></i> Meus Envios</a></li>
+                <li><a href="#simular-frete" onclick="showSection('simular-frete')"><i class="fas fa-truck"></i> Simular Frete</a></li>
+                <li><a href="#minha-conta" onclick="showSection('minha-conta')"><i class="fas fa-user"></i> Minha Conta</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+            <header>
+                <div class="header-info">
+                    <h1>Boas-vindas à BPA EXPRESS!</h1>
+                    <p>Aqui você encontra as informações necessárias para gerenciar seus envios.</p>
+                </div>
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Olá, Usuário</span>
+                </div>
+            </header>
+
+             <!-- Home -->
+             <section id="home" class="content-section">
+                <h2>Como fazer seu primeiro envio?</h2>
+                <p>Facilitamos o envio de suas encomendas com rapidez e segurança.</p>
+                
+                <div class="options-container">
+                    <!-- Simular Frete -->
+                    <div class="option">
+                        <img src="assets/simule-seu-frete.PNG" alt="Simular Frete">
+                        <h3>Simule seu Frete</h3>
+                        <p>Calcule o valor do frete de acordo com a origem, destino e peso da sua encomenda.</p>
+                    </div>
+                    
+                    <!-- Acompanhar Entrega -->
+                    <div class="option">
+                        <img src="assets/acompanhe-entrega.PNG" alt="Acompanhar Entrega">
+                        <h3>Acompanhe a Entrega</h3>
+                        <p>Acompanhe o status da entrega em tempo real.</p>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!-- Meus envios -->
+        <section id="meus-envios" class="content-section" style="display:none;">
+            <h2>Meus Envios</h2>
+                <table class="envios-table">
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                            <th>Origem</th>
+                            <th>Destino</th>
+                            <th>Data de Envio</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="envios-list">
+                        <!-- As linhas de envios serão inseridas aqui -->
+                        <tr>
+                            <td>001</td>
+                            <td>Curitiba, PR</td>
+                            <td>São Paulo, SP</td>
+                            <td>15/10/2024</td>
+                            <td>Em trânsito</td>
+                            <td>
+                                <button class="btn-editar"><i class="fas fa-edit"></i> Editar Pedido</button>
+                                <button class="btn-cancelar"><i class="fas fa-trash"></i> Excluir Pedido</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Rio de Janeiro, RJ</td>
+                            <td>Belo Horizonte, MG</td>
+                            <td>10/10/2024</td>
+                            <td>Entregue</td>
+                            <td>
+                                <button class="btn-editar"><i class="fas fa-edit"></i> Editar Pedido</button>
+                                <button class="btn-cancelar"><i class="fas fa-trash"></i> Excluir Pedido</button>
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+
+            <!-- Simulação de Frete -->
+            <section  id="simular-frete" class="frete-simulacao content-section" style="display:none;">
+                <h2>Simulação de Frete</h2>
+                <form id="freightForm">
+                    <div class="form-group">
+                        <label for="origem">Origem:</label>
+                        <input type="text" id="pickupAddress" name="pickup" placeholder="Endereço de origem" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="destino">Destino:</label>
+                        <input type="text" id="deliveryAddress" name="delivery" placeholder="Endereço de destino" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="altura">Altura (cm):</label>
+                        <input type="number" id="height" placeholder="Altura">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="largura">Largura (cm):</label>
+                        <input type="number" id="width" placeholder="Largura">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comprimento">Comprimento (cm):</label>
+                        <input type="number" id="length" placeholder="Comprimento">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="peso">Peso (kg):</label>
+                        <input type="number" id="weight" name="weight" placeholder="Peso da Carga (kg)" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-calcular">Calcular Frete</button>
+                </form>
+                
+                <div id="result" class="result"></div>
+
+                <!-- Orçamento do frete -->
+                <div class="result-freight" id="resultadoFrete" style="display:none;">
+                    <h3>Detalhes do Seu Frete</h3>
+                    <p><strong>Endereço de Coleta:</strong> <span id="enderecoColeta"></span></p>
+                    <p><strong>Endereço de Entrega:</strong> <span id="enderecoEntrega"></span></p>
+                    <p><strong>Distância:</strong> <span id="distancia"></span> km</p>
+                    <p><strong>Peso da Carga:</strong> <span id="pesoCarga"></span> kg</p>
+                    <p><strong>Valor do Frete:</strong> R$ <span id="valorFrete"></span></p>
+                    <button class="button-result-freight" id="enviarOrcamento" type="submit">Enviar orçamento</button>
+                    <button class="button-result-freight" id="salvarPdf" type="button">Salvar como PDF</button>
+                </div>    
+            </section>
+
+             <!-- Minha Conta -->
+            <section id="minha-conta" class="conta-simulacao content-section" style="display:none;">
+                <h2>Minha Conta</h2>
+                <form class="conta-form">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" value="GUILHERME AUGUSTO DE SOUZA MORAES">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" value="081.462.229-19" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="nascimento">Data de Nascimento:</label>
+                        <input type="date" id="nascimento" name="nascimento" value="1994-01-20">
+                    </div>
+                    <div class="form-group">
+                        <label for="nacionalidade">Nacionalidade:</label>
+                        <input type="text" id="nacionalidade" name="nacionalidade">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" value="guilherme.1994@outlook.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="celular">Celular:</label>
+                        <input type="text" id="celular" name="celular" value="41 9.8767-2063">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirme sua senha:</label>
+                        <input type="password" id="confirm-password" name="confirm-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" value="81.860-160">
+                    </div>
+                    <div class="form-group">
+                        <label for="logradouro">Logradouro:</label>
+                        <input type="text" id="logradouro" name="logradouro" value="RUA CAMPO MOURAO">
+                    </div>
+                    <div class="form-group">
+                        <label for="numero">Número:</label>
+                        <input type="text" id="numero" name="numero" value="28">
+                    </div>
+                    <div class="form-group">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" value="ALTO BOQUEIRAO">
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" value="Curitiba">
+                    </div>
+                    <div class="form-group">
+                        <label for="complemento">Complemento:</label>
+                        <input type="text" id="complemento" name="complemento">
+                    </div>
+                    <button type="submit" class="btn-salvar"><i class="fas fa-save"></i> Salvar</button>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -240,7 +240,7 @@ i {
 
 .header-buttons a {
   text-align: center; 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* About  */
@@ -356,7 +356,7 @@ i {
   }
 }
 
-/* Calculadora de Frete */
+/* Freight calculator */
 .freight-calculator {
   background-color: #fff;
   color: #232224;
@@ -369,20 +369,22 @@ i {
   margin-bottom: 40px;
 }
 
-
-
 label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
 }
 
-input, select {
+input{
   width: 60%;
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #0e0d0d;
   font-size: 16px;
+}
+
+.form-group input:focus {
+  border-color: #d94140;
 }
 
 button[type="submit"], .button-result-freight {
@@ -407,7 +409,7 @@ button[type="submit"]:hover, .button-result-freight:hover {
   color: #333;
 }
 
-/* Orçamento do frete */
+/* Result freight */
 .result-freight {
   margin-top: 80px;
   background-color: #fff;
@@ -522,13 +524,7 @@ footer p {
   margin-bottom: 20px;
 }
 
-input {
-  width: 60%;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #0e0d0d;
-  font-size: 16px;
-}
+
 
 button[type="submit"], .registration-button {
   background-color: #d94140;
@@ -564,7 +560,7 @@ button[type="submit"]:hover, .registration-button:hover {
 }
 
 .radio-container label input[type="radio"] {
-  margin-right: -410px; 
+  margin-right: -380px; 
 }
 
 .radio-group {
@@ -573,6 +569,14 @@ button[type="submit"]:hover, .registration-button:hover {
 
 @media screen and (max-width: 468px) {
   /* Ajusta a largura dos inputs de texto */
+  .container h2 {
+    font-size: 22px;
+  }
+
+  .form-group p, label {
+    font-size: 15px;
+  }
+
   input {
     width: 90%;
   }
@@ -600,10 +604,11 @@ button[type="submit"]:hover, .registration-button:hover {
     text-align: center; 
     width: 100%;
   }
+
+  .registration-button {
+    font-size: 12px;
+  }
 }
-
-
-
 
 /* Barra de progresso */
 .progress-bar {
@@ -649,12 +654,5 @@ button[type="submit"]:hover, .registration-button:hover {
   color: #555;
 }
 
-/* Login */
-#loginForm input {
-  width: 60%;
-}
 
-.forgot-password , .register-link {
-  line-height: 150%;
-}
 

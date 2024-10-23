@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluir jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- API google -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARLiv-4fC4XefW7g533SI5Mbwr2hQZYaU"></script> 
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+
     <!-- Biblioteca animação -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -12,14 +21,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
 
-    <!-- API google -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARLiv-4fC4XefW7g533SI5Mbwr2hQZYaU"></script> 
-
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- JS -->
-    <script src="script.js" defer></script>
 
     <!-- CSS -->
      <link rel="stylesheet" href="style.css">
@@ -43,27 +46,30 @@
                         <img src="assets/default_transparent_765x625.png" alt="Logo BPA EXPRESS" data-aos="flip-up" data-aos-duration="1500" data-aos-delay="400">
                     </div> 
                     <div class="header-buttons"  data-aos="fade-down">
-                        <a class="header-button" href="login.html" target="_blank">
+                        <a class="header-button" href="login.html">
                             Entrar
                         </a>
-                        <a class="header-button" href="register.html" target="_blank">
-                            Cadastrar
+                        <a class="header-button" href="register.html">
+                            Cadastre-se
                         </a>
                     </div> 
                 </nav>
+                
                 <!-- Hero -->
                 <main class="hero container" data-aos="fade-up" data-aos-delay="400">
                     <h1>CONECTANDO DESTINOS E ENTREGANDO CONFIANÇA!</h1>
-                    <a href="https://api.whatsapp.com/send?phone=041999905296&text=Quero%20fazer%20um%20orçamento!" class="button-contact" target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=041999905296&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20BPA%20EXPRESS" class="button-contact" target="_blank">
                         Entrar em contato
                     </a>
                 </main>
+
                 <!-- Menu toggle -->
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
             </header>
         </div>
+
     <!-- About -->
         <section class="about">
             <div class="container about-content">
@@ -81,6 +87,7 @@
                 </div>
             </div>
         </section> 
+
     <!-- Services -->
         <section class="services">
             <div class="services-content container">
@@ -109,33 +116,41 @@
             </section>
         </section>
 
- <!-- Calculadora de Frete -->
+ <!-- Freight calculator -->
  <section class="freight-calculator">
     <div class="container">
         <h2>Descubra o valor do seu Frete</h2>
         <form id="freightForm">
             <div class="form-group">
+                <label for="origem">Origem:</label>
+                <input type="text" id="pickupAddress" name="pickup" placeholder="Endereço de origem" required>
+            </div>
+            <div class="form-group">
+                <label for="destino">Destino:</label>
+                <input type="text" id="deliveryAddress" name="delivery" placeholder="Endereço de destino" required>
+            </div>
+            <div class="form-group">
+                <label for="altura">Altura (cm):</label>
+                <input type="number" id="height" placeholder="Altura">
+            </div>
+            <div class="form-group">
+                <label for="largura">Largura (cm):</label>
+                <input type="number" id="width" placeholder="Largura">
+            </div>
+            <div class="form-group">
+                <label for="comprimento">Comprimento (cm):</label>
+                <input type="number" id="length" placeholder="Comprimento">
+            </div>
+            <div class="form-group">
+                <label for="peso">Peso (kg):</label>
                 <input type="number" id="weight" name="weight" placeholder="Peso da Carga (kg)" required>
-            </div>
-            <div class="form-group">
-                <input type="text" id="pickup" name="pickup" placeholder="Endereço de coleta" required>
-            </div>
-            <div class="form-group">
-                <input type="text" id="delivery" name="delivery" placeholder="Endereço de entrega" required>
-            </div>
-            <div class="form-group">
-                <select id="transportType" name="transportType" required>
-                    <option value="" disabled selected hidden>Tipo de transporte</option>
-                    <option value="normal">Normal</option>
-                    <option value="express">Express</option>
-                </select>
             </div>
             
             <button type="submit">Calcular Frete</button>
         </form>
         <div id="result" class="result"></div>
 
-        <!-- Orçamento do frete -->
+        <!-- Result freight -->
         <div class="result-freight" id="resultadoFrete" style="display:none;">
             <h3>Detalhes do Seu Frete</h3>
             <p><strong>Endereço de Coleta:</strong> <span id="enderecoColeta"></span></p>
@@ -148,10 +163,6 @@
         </div>
     </div>
 </section>
-
-<!-- Incluir jsPDF -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="scripts.js"></script>
 
     <!-- Footer -->
     <footer class="footer">
@@ -168,6 +179,7 @@
         </div>
         <p>Copyright 2024 | BPA EXPRESS - Todos direitos reservados.</p>
     </footer>
+
     <!-- Button whatsapp -->
     <a href="https://api.whatsapp.com/send?phone=041999905296&text=Quero%20fazer%20um%20orçamento!" class="btn-whatsapp" target="_blank" data-aos="zoom-in-up" data-aos-delay="250">
         <img src="assets/whatsapp.png" alt="Botao whatsapp">

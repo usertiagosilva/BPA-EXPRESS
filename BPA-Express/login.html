@@ -3,46 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- JS -->
-    <script src="script.js" defer></script>
+    <title>Login</title>    
+ 
+     <!-- Biblioteca animação -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ 
+     <!-- Google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
+ 
+     <!-- Icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+     <!-- CSS -->
+    <link rel="stylesheet" href="style_login.css">
+
+    <!-- JS -->
+    <script src="script_login.js" defer></script>
 </head>
 <body>
-<!-- Login -->
-<section class="registration">
-    <div class="container">
-        <h2>Bem-vindo de volta!</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-            </div>
-            <div class="form-group">
-                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-            </div>
-            <button type="submit" class="registration-button">Entrar</button>
-            <p class="forgot-password">Esqueceu a senha? <a href="#">Clique aqui</a></p>
-            <p class="register-link">Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
-        </form>
-    </div>
-</section>
+    <div class="login-container">
+        <div class="login-box">
+            <p id="form-title">______ Acesse sua conta _______</p>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-icons">
-        <a href="#">
-            <i class="fa-brands fa-instagram fa-2x"></i>
-        </a>
-        <a href="#">
-            <i class="fa-brands fa-facebook fa-2x"></i>
-        </a>
+            <!-- Formulário de Login -->
+            <form id="login-form" action="#" method="POST">
+                <div class="input-container">
+                    <input type="text" placeholder="E-mail" required>
+                    <i class="fas fa-user icon-user"></i>
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="Senha" required>
+                    <i class="fas fa-lock icon-lock"></i>
+                </div>
+                <a href="#" id="forgot-password" class="forgot-password">Esqueci minha senha</a>
+                <button type="submit" class="login-button">Entrar</button>
+            </form>
+
+            <!-- Formulário de Redefinição de Senha (inicialmente oculto) -->
+            <form id="reset-form" action="#" method="POST" style="display: none;">
+                <div class="input-container">
+                    <input type="email" placeholder="Digite seu e-mail" required>
+                    <i class="fas fa-user icon-user"></i>
+                </div>
+                <button type="submit" class="reset-button">Enviar link de redefinição</button>
+                <a href="#" id="back-to-login" class="back-to-login">Voltar para o login</a>
+            </form>
+        </div>
     </div>
-    <div class="footer-logo">
-        <img src="assets/default_transparent_765x625.png" alt="Logo Transportadora">
-    </div>
-    <p>Copyright 2024 | BPA EXPRESS - Todos direitos reservados.</p>
-</footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
